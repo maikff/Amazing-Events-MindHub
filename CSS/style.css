@@ -1,0 +1,83 @@
+body {
+  background-image: url(../img/banner_concert.jpg);
+  background-size: 100%;
+  background-repeat: repeat-y;
+  font-family: 'Fredoka One';
+}
+
+footer {
+  display: block;
+  top: 100%;
+}
+
+.header-titulo {
+  color: white;
+  font-size: 8vh;
+}
+
+.text {
+  color: white;
+}
+.text:hover {
+  font-weight: bold;
+  font-size: large;
+  color: #dc046c;
+}
+
+.text-active{
+  font-weight: bold;
+  font-size: large;
+  color: white;
+}
+.text-active:hover {
+  font-weight: bold;
+  font-size: large;
+  color: #dc046c;
+}
+
+.card{
+  background-image: url(../img/bg_card.jpg);
+  background-repeat: repeat-y;
+  background-size: auto 75%;
+  background-position: bottom;
+  color: white;
+  border: solid  1px #dc046c;
+}
+
+.card-img-top>img {
+  width: 100%;
+}
+
+.card-footer {
+  border-top: solid 1px #dc046c;
+}
+
+.navbar-toggler{
+  background-color: #dc046c;
+}
+
+.logo {
+  width: 150px;
+}
+
+.contact-form {
+  display: flex;
+  height: 52vh;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  text-align: center;
+}
+
+.stats-table {
+  height: 52vh;
+}
+
+.details-container {
+  height: 84vh;
+}
