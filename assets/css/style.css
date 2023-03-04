@@ -1,0 +1,67 @@
+:root {
+    --background-header-footer: #f7b6d2;
+    --background-gris-claro: #e8e8e8;
+    --background-blanco: #ffffff;
+    --fuente-negro: #000000;
+    --fuente-gris: #767a7e;
+    --fuente-logo: #a8175d;
+    --boton-azul-marino: #003366;
+
+    --lato: 'Lato', sans-serif;
+}
+
+*{
+    font-family: var(--lato);
+    list-style: none;
+}
+
+.text {
+    color: var(--fuente-logo);
+    font-weight: bold;
+
+  }
+  .text:hover {
+    font-weight: bold;
+    font-size: large;
+    color: var(--fuente-gris);
+  }
+  
+  .text-active{
+    font-weight: bold;
+    font-size: large;
+    color: var(--fuente-negro);
+  }
+  .text-active:hover {
+    font-weight: bold;
+    font-size: large;
+    color: var(--fuente-negro);
+  }
+
+  a {
+    text-decoration: none!important;
+    color: var(--background-gris-claro);
+  }
+
+header, footer {
+    background-color: var(--background-header-footer);
+}
+
+body {
+    background-color: var(--background-gris-claro);
+}
+
+.contact-form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact-form form {
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
+  width: 70%;
+  height: 63vh;
+  text-align: center;
+  background-color: var(--background-blanco);
+}
