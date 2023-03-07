@@ -35,7 +35,7 @@ header {
     font-size: 1.5em;
   }
   .header-banner{
-    background-size: 100% 28%;
+    background-size: 100% 40%;
   }
 }
 
@@ -54,7 +54,7 @@ header {
   font-weight: bold;
   font-size: large;
   color: var(--color5) !important;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }
 
 .text {
