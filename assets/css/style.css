@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
@@ -10,7 +9,7 @@
 
   --banner: url('../img/banner.png');
 
-  --fuente-titulo: 'Lilita One', cursive;
+  --fuente-titulo: Arial, Helvetica, sans-serif;
   --fuente: 'roboto', cursive;
 }
 
@@ -30,24 +29,35 @@ header {
   background-size: 100% 28%;
 }
 
+.header_titulo {
+  max-width: 100%;
+  text-align: center;
+}
+
 @media screen and (min-width: 728px) {
   .header_titulo {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .header-banner{
     background-size: 100% 40%;
   }
 }
 
-.header_titulo {
-  width: 100%;
-  text-align: center;
+@media screen and (max-width: 545px) {
+  .header_titulo {
+    font-size: .8em;
+  }
+  .header-banner{
+    background-size: 100% 35%;
+  }
 }
 
 .header_titulo-titulo {
   font-family: var(--fuente-titulo);
+  font-weight: bolder;
   font-size: 3em;
   color: var(--color5);
+  max-width: 100%;
 }
 
 .header-arrow:hover {
