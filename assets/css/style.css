@@ -148,7 +148,7 @@ body:link {
 }
 
 .card-body {
-  font-size: .9em;
+  font-size: .9em!important;
   padding-top: 0!important;
   padding-bottom: 0!important;
 }
