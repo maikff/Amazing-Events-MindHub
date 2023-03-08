@@ -144,9 +144,15 @@ body:link {
 }
 
 .card {
-  height: 46vh!important;
+  height: 50vh!important;
 }
 
+.card-body {
+  font-size: .9em;
+  padding-top: 0!important;
+  padding-bottom: 0!important;
+}
 .card-body>p{
   margin: 0!important;
+  padding-bottom: 0!important;
 }
