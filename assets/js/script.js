@@ -72,7 +72,7 @@ function filterEvents(events, containerId, category, currentDate) {
     });
 }
 
-//###############Buscador por nombre de evento#################
+//###############Buscador por nombre-categoria-descripcion de evento#################
 function searchEvents(inputId, btnId, containerId) {
     const input = document.getElementById(inputId);
     const btn = document.getElementById(btnId);
