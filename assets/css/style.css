@@ -152,6 +152,10 @@ body:link {
   padding-top: 0!important;
   padding-bottom: 0!important;
 }
+.card-body>h2 {
+  padding-top: 5px!important;
+  font-size: 1.5em!important;
+}
 .card-body>p{
   margin: 0!important;
   padding-bottom: 0!important;
