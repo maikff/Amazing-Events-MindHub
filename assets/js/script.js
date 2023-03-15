@@ -29,20 +29,14 @@ function displayEvents(events, containerId) {
     const currentDate = new Date(data.currentDate);
 
     const checkboxes = document.querySelectorAll('input[type="checkbox"][name="category"]');
-    checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener("change", () => {
-            if (checkbox.checked) {
-                checkboxes.forEach((otherCheckbox) => {
-                    if (otherCheckbox !== checkbox) {
-                        otherCheckbox.checked = false;
-                    }
-                });
-                filterEvents(events, containerId, checkbox.value, currentDate);
-            } else {
-                filterEvents(events, containerId, "", currentDate);
-            }
-        });
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener("change", () => {
+        const categories = Array.from(checkboxes)
+            .filter(c => c.checked)
+            .map(c => c.value);
+        filterEvents(events, containerId, categories, currentDate);
     });
+});
 
     events.forEach((event) => {
         const eventDate = new Date(event.date);
@@ -53,9 +47,8 @@ function displayEvents(events, containerId) {
         }
     });
 }
-
-//###############Filtro por categoria#################
-function filterEvents(events, containerId, category, currentDate) {
+//############################Filtrar por categorias###################################
+function filterEvents(events, containerId, categories, currentDate) {
     const container = document.getElementById(containerId);
     if (!container) {
         return;
@@ -66,11 +59,12 @@ function filterEvents(events, containerId, category, currentDate) {
         if ((containerId === "container_cards-home" ||
             (containerId === "container_cards-upcoming" && eventDate > currentDate) ||
             (containerId === "container_cards-past" && eventDate < currentDate)) &&
-            (category === "" || event.category === category)) {
+            (categories.length === 0 || categories.includes(event.category))) {
             container.insertAdjacentHTML("beforeend", generateEventCard(event));
         }
     });
 }
+
 
 //###############Buscador por nombre de evento#################
 function searchEvents(inputId, btnId, containerId) {
@@ -82,22 +76,22 @@ function searchEvents(inputId, btnId, containerId) {
     function search() {
         const searchText = input.value.toLowerCase().trim();
         container.innerHTML = "";
-
+        let filteredEvents = events;
+        const checkboxes = document.querySelectorAll('input[type="checkbox"][name="category"]');
+        const categories = Array.from(checkboxes)
+            .filter(c => c.checked)
+            .map(c => c.value);
+        if (categories.length > 0) {
+            filteredEvents = filteredEvents.filter(event => categories.includes(event.category));
+        }
         if (searchText === "") {
-            events.forEach((event) => {
+            filteredEvents.forEach((event) => {
                 container.insertAdjacentHTML("beforeend", generateEventCard(event));
             });
         } else {
-            events.forEach((event) => {
+            filteredEvents.forEach((event) => {
                 const eventName = event.name.toLowerCase();
-                const eventCategory = event.category.toLowerCase();
-                const eventDescription = event.description.toLowerCase();
-
-                if (
-                    eventName.includes(searchText) ||
-                    eventCategory.includes(searchText) ||
-                    eventDescription.includes(searchText)
-                ) {
+                if (eventName.includes(searchText)) {
                     container.insertAdjacentHTML("beforeend", generateEventCard(event));
                 }
             });
@@ -114,6 +108,9 @@ function searchEvents(inputId, btnId, containerId) {
 
     input.addEventListener("input", search);
 }
+
+
+
 //#########################Llamo a las funciones#######################################
 
 displayEvents(data.events, "container_cards-home");
