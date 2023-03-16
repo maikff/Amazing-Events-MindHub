@@ -11,7 +11,7 @@ function generateEventCard(event) {
     <div class="card-footer d-flex justify-content-between align-items-center">
     <p class="my-0">$${event.price}</p>
     <button type="button" class="btn btn-outline-secondary">
-    <a href="./pages/details.html">ver más...</a>
+    <a href="./pages/details.html?id=${event._id}">ver más...</a>
     </button>
     </div>
     </div>
