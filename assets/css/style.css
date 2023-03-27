@@ -160,3 +160,9 @@ body:link {
   margin: 0!important;
   padding-bottom: 0!important;
 }
+
+.card-details {
+  height: auto!important;
+  width: 90vh!important;
+  justify-content: center;
+}
